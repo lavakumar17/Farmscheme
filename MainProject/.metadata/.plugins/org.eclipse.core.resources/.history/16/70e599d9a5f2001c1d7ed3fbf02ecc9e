@@ -1,0 +1,16 @@
+package com.example.demo.farm_scheme.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class SellRequestController {
+	
+	@GetMapping("/farmer/sellRequest")
+	public ModelAndView farmerSellRequest() {
+		ModelAndView mv=new ModelAndView("/farmer/sell_request.jsp");
+		return mv;
+	}
+
+}

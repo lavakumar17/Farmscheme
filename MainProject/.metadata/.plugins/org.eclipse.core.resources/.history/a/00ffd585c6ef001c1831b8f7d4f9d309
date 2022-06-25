@@ -1,0 +1,21 @@
+package com.example.demo.farm_scheme.services;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.farm_scheme.models.Farmer;
+import com.example.demo.farm_scheme.repositories.FarmerRepo;
+
+@Service
+public class FarmerService {
+
+	@Autowired
+	private FarmerRepo farmerRepo;
+	
+	public Farmer adminLogin(String email) {
+		Farmer farmer=farmerRepo.findById(email).orElse(null);
+		return farmer;
+	}
+	
+}

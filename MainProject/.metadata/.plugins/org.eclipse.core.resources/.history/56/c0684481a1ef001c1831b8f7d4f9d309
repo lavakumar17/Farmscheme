@@ -1,0 +1,7 @@
+package com.example.demo.farm_scheme.repositories;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface FormerRepo extends CrudRepository<T, ID> {
+
+}

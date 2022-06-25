@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="container">
+<table class="table table-bordered table-striped text-center table-responsive-md">
+<tr>
+<th>Crop Name</th>
+<th>Quantity</th>
+<th>MSP</th>
+<th>Sold Price</th>
+<th>Total Price</th>
+<tr>
+<td>${sellRequest.cropName }</td>
+<td>${sellRequest.quantity }</td>
+<td>${900 }</td>
+<td>${100 }</td>
+<td>${900*100}</td>
+</tr>
+<!-- </c:forEach> -->
+</table>
+<button class="btn btn-success" type="submit" href="javascript:document.insuranceApplyForm.submit()">Apply</button>
+</div>
+</section>
+</body>
+</html>

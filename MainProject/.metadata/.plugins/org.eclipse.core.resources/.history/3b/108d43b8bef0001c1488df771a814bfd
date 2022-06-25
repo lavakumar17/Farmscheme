@@ -1,0 +1,19 @@
+package com.example.demo.farm_scheme.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.farm_scheme.models.InsuranceReg;
+
+@Controller
+public class InsuranceRegController {
+	
+	@GetMapping("/farmer/insuranceForm")
+	public ModelAndView farmerInsuranceReg() {
+		ModelAndView mv=new ModelAndView("/farmer/insurance_reg.jsp");
+		mv.addObject("insurance", new InsuranceReg());
+		return mv;
+	}
+
+}

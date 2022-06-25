@@ -1,0 +1,4 @@
+@RequestMapping("/farmer/insurance_apply")
+	public InsuranceApplyController farmerInsuranceApply() {
+		return new InsuranceApplyController();
+	}

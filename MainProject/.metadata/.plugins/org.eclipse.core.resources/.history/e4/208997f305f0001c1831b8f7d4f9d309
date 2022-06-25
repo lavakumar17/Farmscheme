@@ -1,0 +1,26 @@
+package com.example.demo.farm_scheme.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+@Entity
+public class InsuranceReg {
+	
+	@Id
+@SequenceGenerator(
+			
+			name="policy_no",
+			sequenceName="policy_no",
+			allocationSize=1
+			
+			)
+	@GeneratedValue(
+			strategy=GenerationType.SEQUENCE,
+			generator="policy_no"
+			)
+	private int policyNo;
+
+}

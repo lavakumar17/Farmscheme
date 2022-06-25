@@ -1,0 +1,36 @@
+package com.example.demo.farm_scheme.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.farm_scheme.models.Farmer;
+import com.example.demo.farm_scheme.services.FarmerService;
+
+@RestController
+public class FarmerController {
+	
+	@Autowired
+	FarmerService farmerService;
+	
+	@GetMapping("/farmer/registration")
+	public ModelAndView farmerReg() {
+		ModelAndView mv=new ModelAndView("/farmer/farmer_reg.jsp");
+		mv.addObject("farmer", new Farmer());
+		return mv;
+	}
+	
+	@PostMapping("/farmer/registration")
+	public ModelAndView farmerReg(@ModelAttribute("farmer") Farmer farmer) {
+		ModelAndView mv=new ModelAndView("/farmer/farmer_reg.jsp");
+		if(farmerService.addFarmer(farmer))
+			mv.addObject("success", "farmer added successfully");
+		else
+			mv.addObject("failed", "Email is already exist");
+		return mv;
+	}
+
+}

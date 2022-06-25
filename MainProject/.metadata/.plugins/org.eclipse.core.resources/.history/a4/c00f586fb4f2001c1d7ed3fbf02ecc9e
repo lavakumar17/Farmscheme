@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">Farm Scheme</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+<section>
+<!-- <h3 class="text-center">Booking History</h3> -->
+<div class="container">
+<table class="table table-bordered table-striped text-center table-responsive-md">
+<tr>
+<th>Insurance Company</th>
+<th>Sum Insured(per Hectare)</th>
+<th>Share Premium</th>
+<th>Premium Amount</th>
+<th>Crop Name</th>
+<th>Area</th>
+<th>Sum Insured</th>
+</tr>
+<%-- <td class="border">${user.getUserId()}</td>
+<td class="border">${user.getUserName()}</td> --%>
+<%-- <c:forEach var="history" items="${bookingHistory}" varStatus="status"> --%>
+<tr>
+<td>${insurance.company }</td>
+<td>${insurance.sumInsuredPH }</td>
+<td>${insurance.sharePremium }</td>
+<td>${insurance.premiumAmount }</td>
+<td>${insurance.crop}</td>
+<td>${insurance.area }</td>
+<td>${insurance.sumInsured }</td>
+</tr>
+<!-- </c:forEach> -->
+</table>
+<button class="btn btn-success" type="submit" href="javascript:document.insuranceApplyForm.submit()">Apply</button>
+</div>
+</section><br><br>
+</body>
+</html>

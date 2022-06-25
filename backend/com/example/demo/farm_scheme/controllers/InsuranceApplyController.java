@@ -1,0 +1,30 @@
+package com.example.demo.farm_scheme.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.farm_scheme.models.InsuranceReg;
+import com.example.demo.farm_scheme.services.InsuranceService;
+
+@RestController
+public class InsuranceApplyController {
+	
+	@Autowired
+	InsuranceService insuranceService;
+	
+	@PostMapping("/farmer/insurance_apply")
+	public ModelAndView farmerInsuranceReg(@ModelAttribute("insurance") InsuranceReg insurance) {
+		insurance.setInsuranceCompany("Wipro");
+		insurance.setPremiumAmount(100);
+		insurance.setSharePremium(10);
+		ModelAndView mv=new ModelAndView("/farmer/insurance_reg_success.jsp");
+		Integer policyNo=insuranceService.register(insurance);
+		mv.addObject("policyNo",policyNo);
+		mv.addObject("insurance", new InsuranceReg());
+		return mv;
+	}
+
+}

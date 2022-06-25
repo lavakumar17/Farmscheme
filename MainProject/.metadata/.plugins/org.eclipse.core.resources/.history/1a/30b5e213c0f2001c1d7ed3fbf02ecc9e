@@ -1,0 +1,8 @@
+package com.example.demo.farm_scheme.controllers;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class InsuranceClaimController {
+
+}
